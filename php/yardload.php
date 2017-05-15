@@ -70,14 +70,15 @@ if(mysqli_query($conn2, $createtable) === TRUE){
 
 // /*  Load the csv file into MySQL */
 // // Load Data not working - OPtional encolsed by is causeing issues!
-$sqlLoad = 
+// Likely need to swap the reminated by from /r to /r/n - need to test on WB PC
+$sqlLoad =
 '
 LOAD DATA LOCAL INFILE "/media/DCA2998AA2996A32/www/nest/php/uploads/DailyYard.csv"
 INTO TABLE `wbyard`
 FIELDS TERMINATED BY ","
 OPTIONALLY ENCLOSED BY "\""
 LINES TERMINATED BY "\r"
-IGNORE 1 LINES 
+IGNORE 1 LINES
 (    HeaderRowA0,
     HeaderRowA1,
     textbox6,
@@ -113,8 +114,8 @@ IGNORE 1 LINES
     Textbox9,
     TotalStudents1)
     SET CustomerName = nullif(@CustomerName, " ");
-  '      
- ; 
+  '
+ ;
 
 // mysqli_options($conn2, MYSQLI_OPT_LOCAL_INFILE, true);
 // Currently SQL Load does not work - possible acces rights or incorrect filepath..
@@ -158,7 +159,7 @@ exit;
 
 
 ?>
-<!-- 
+<!--
 	(@date, name, type, @number, @duration, @addr, @pin, @city, @state, @country, lat, log)
         SET date = STR_TO_DATE(@date, '%b-%d-%Y %h:%i:%s %p'),
             number = TRIM(BOTH '\'' FROM @number),
@@ -172,7 +173,7 @@ exit;
 
              <!-- LOAD DATA INFILE '/media/DCA2998AA2996A32/www/yard/scripts/uploads/subject.csv'
         INTO TABLE `wbyard`
-        FIELDS TERMINATED BY ',' 
+        FIELDS TERMINATED BY ','
         LINES TERMINATED BY '\r'
-        IGNORE 1 LINES 
+        IGNORE 1 LINES
         (emp_id, firstname, lastname, email, reg_date); -->
