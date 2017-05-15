@@ -4,23 +4,30 @@
   <meta charset="UTF-8">
   <title>Basic mockup of the Yard</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/formatting.css">
 
-  
+
 </head>
 <body>
 
 
-  
 
     <header class="site-header-wrap">
     <div class="site-header">
-      <h1><a class="site-logo" href="http://whistlerblackcomb.com">Daily Yard<br><span>some text
+      <h1><a class="site-logo" href="http://whistlerblackcomb.com">Daily Yard<br><span>
+        <h6>
+          <?php echo "Last updated: ".date("F d Y H:i:s.",filemtime("php/uploads/".$filename.""));?>
+          <br>
+          <?php $date = date("F d H:i"); echo "<br> Information retrieved: ".$date."<br>"; ?>
+      </h6>
       </span></a></h1>
 
+
       <nav class="site-nav">
-        <a href="/phonelist/index.html"><span class="fa-reply"></span>Instructor Phonelist</a>
-        <a href="php/upload.php"><span class="fa-eye"></span>Upload New Yard</a>
+        <a href="/phonelist/index.html">Instructor Phonelist</a>
+        <span> | </span>
+        <a href="php/upload.php"><span class="align-right">Upload New Yard</span></a>
+
 
       </nav>
 
