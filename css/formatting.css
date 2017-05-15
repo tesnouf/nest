@@ -31,8 +31,8 @@ h1 {
   font-size:1.5em;
 }
 /*testing can be done in h2*/
-h2 {
-  color:red;
+h6 {
+  /*color:red;*/
   text-align: right;
 }
 

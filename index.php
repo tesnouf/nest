@@ -17,9 +17,10 @@
       <h1><a class="site-logo" href="http://whistlerblackcomb.com">Daily Yard<br><span>
         <h6>
           <?php echo "Last updated: ".date("F d Y H:i:s.",filemtime("php/uploads/".$filename.""));?>
-          <br>
+
+
           <?php $date = date("F d H:i"); echo "<br> Information retrieved: ".$date."<br>"; ?>
-      </h6>
+        </h6>
       </span></a></h1>
 
 
